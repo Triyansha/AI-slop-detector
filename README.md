@@ -6,7 +6,7 @@ Not an "AI-or-human" accuser. A scorer + coach: *what* reads as machine-made, *h
 
 ## Install
 ```bash
-npx skills add triyansha/slop-detector
+npx skills add triyansha/AI-slop-detector
 ```
 (Installs by git-clone into your Claude skills directory, so `git pull` brings weekly taxonomy updates. Manual: clone this repo into `~/.claude/skills/`.)
 
