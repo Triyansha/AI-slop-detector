@@ -1,0 +1,6 @@
+{
+  "modes": [
+    { "id": "pm", "leads_with": "upstream/taxonomy-pm.md", "signals": ["PRD", "spec", "retro", "roadmap", "OKR", "stakeholder", "launch", "sprint", "backlog", "PR/FAQ", "6-pager", "one-pager", "WBR", "battlecard", "persona"] },
+    { "id": "general", "leads_with": "upstream/taxonomy-core.md", "signals": ["*"], "default": true }
+  ]
+}
