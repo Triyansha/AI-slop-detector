@@ -1,0 +1,11 @@
+{
+  "name": "slop-detector",
+  "version": "0.1.0",
+  "description": "Multimodal AI-slop detector, de-slopper, and coach — a pure-instruction Claude skill.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/",
+    "eval": "node tests/eval/run-eval.mjs"
+  },
+  "license": "MIT"
+}
