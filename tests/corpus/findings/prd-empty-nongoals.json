@@ -1,0 +1,15 @@
+{
+  "score": 78,
+  "band": "saturated",
+  "mode": "pm",
+  "artifact": "PRD",
+  "version": "0.1.0",
+  "findings": [
+    { "tell_id": "text-opener-fastpaced", "severity": "high", "locator": { "type": "span", "text": "In today's fast-paced digital landscape" }, "test_failed": "specificity", "why": "generic opener, true of any product" },
+    { "tell_id": "text-buzzword-abstraction", "severity": "medium", "locator": { "type": "span", "text": "leverage cutting-edge capabilities and unlock transformative value" }, "test_failed": "specificity", "why": "abstraction, names nothing concrete" },
+    { "tell_id": "text-nongoals-empty", "severity": "high", "locator": { "type": "span", "text": "Out of scope items will be determined later" }, "test_failed": "tradeoff", "why": "non-goals names no actual excluded item" },
+    { "tell_id": "text-untestable-requirement", "severity": "high", "locator": { "type": "span", "text": "should be fast, reliable, and user-friendly" }, "test_failed": "specificity", "why": "no measurable threshold" },
+    { "tell_id": "text-restating-conclusion", "severity": "medium", "locator": { "type": "span", "text": "In conclusion, this initiative will deliver significant value" }, "test_failed": "specificity", "why": "restates without new information" }
+  ],
+  "top_fix": "Replace every vague requirement with a measurable threshold and name 3 real out-of-scope items."
+}

@@ -1,0 +1,11 @@
+{
+  "slop/prd-empty-nongoals.md": {
+    "band": "saturated",
+    "max_score_band": "heavy_or_worse",
+    "must_catch": ["text-nongoals-empty", "text-untestable-requirement", "text-opener-fastpaced"]
+  },
+  "clean/prd-sharp.md": {
+    "band": "clean",
+    "must_catch": []
+  }
+}
