@@ -31,3 +31,16 @@ test('rulepack: missing field is rejected', () => {
   const errors = validateRulepack([{ id: 'x-y', medium: 'text' }], schema);
   assert.ok(errors.some(m => m.includes('missing')));
 });
+
+test('rulepack: null entry is reported, not thrown', () => {
+  const errors = validateRulepack([null], schema);
+  assert.ok(errors.some(m => m.includes('not an object')));
+});
+
+test('rulepack: null field value is treated as missing', () => {
+  const errors = validateRulepack([{
+    id: 'x-y', medium: null, domain: 'pm', severity: 'low',
+    test: 'specificity', rule_ref: 'wc-1', source: 'https://x.co', date: '2026-06-05'
+  }], schema);
+  assert.ok(errors.some(m => m === 'entry 0 (x-y): missing medium'));
+});

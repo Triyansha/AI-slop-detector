@@ -4,7 +4,7 @@
   "description": "Multimodal AI-slop detector, de-slopper, and coach — a pure-instruction Claude skill.",
   "type": "module",
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test \"tests/**/*.test.mjs\"",
     "eval": "node tests/eval/run-eval.mjs"
   },
   "license": "MIT"
