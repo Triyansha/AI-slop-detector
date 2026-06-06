@@ -1,0 +1,17 @@
+{
+  "score": 64,
+  "band": "heavy",
+  "mode": "pm",
+  "artifact": "PRD",
+  "version": "0.1.0",
+  "findings": [
+    {
+      "tell_id": "text-nongoals-empty",
+      "severity": "high",
+      "locator": { "type": "span", "text": "out of scope items will be determined later" },
+      "test_failed": "specificity",
+      "why": "non-goals section names no actual excluded item"
+    }
+  ],
+  "top_fix": "List 3 concrete out-of-scope items and one reason each was cut."
+}

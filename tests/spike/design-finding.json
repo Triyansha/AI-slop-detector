@@ -1,0 +1,17 @@
+{
+  "score": 58,
+  "band": "heavy",
+  "mode": "general",
+  "artifact": "landing-page",
+  "version": "0.1.0",
+  "findings": [
+    {
+      "tell_id": "design-gradient-purpleblue",
+      "severity": "high",
+      "locator": { "type": "region", "description": "hero background, full-width" },
+      "test_failed": "specificity",
+      "why": "purple-to-blue gradient is the single most common AI design tell, no brand rationale"
+    }
+  ],
+  "top_fix": "Replace the hero gradient with a brand color or a real product screenshot."
+}
