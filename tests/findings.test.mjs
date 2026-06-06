@@ -37,3 +37,12 @@ test('findings: missing top-level field is rejected', () => {
   const { top_fix, ...bad } = good;
   assert.ok(validateFindings(bad, schema, ids).some(m => m.includes('top_fix')));
 });
+
+test('findings: null object is reported, not thrown', () => {
+  assert.ok(validateFindings(null, schema, ids).some(m => m.includes('not an object')));
+});
+
+test('findings: null entry in findings array is reported, not thrown', () => {
+  const bad = { ...good, findings: [null] };
+  assert.ok(validateFindings(bad, schema, ids).some(m => m.includes('finding 0')));
+});
