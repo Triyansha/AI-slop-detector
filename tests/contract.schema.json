@@ -1,0 +1,16 @@
+{
+  "top_required": ["score", "band", "mode", "artifact", "version", "findings", "top_fix"],
+  "finding_required": ["tell_id", "severity", "locator", "test_failed", "why"],
+  "enums": {
+    "band": ["clean", "light", "heavy", "saturated"],
+    "severity": ["low", "medium", "high"],
+    "test_failed": ["specificity", "provenance", "tradeoff", "decision", "stakes", "confidence"],
+    "locator_type": ["span", "slide", "region", "cell", "timestamp"]
+  },
+  "bands": [
+    { "name": "clean", "min": 0, "max": 20 },
+    { "name": "light", "min": 21, "max": 45 },
+    { "name": "heavy", "min": 46, "max": 70 },
+    { "name": "saturated", "min": 71, "max": 100 }
+  ]
+}
