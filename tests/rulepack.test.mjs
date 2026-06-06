@@ -44,3 +44,9 @@ test('rulepack: null field value is treated as missing', () => {
   }], schema);
   assert.ok(errors.some(m => m === 'entry 0 (x-y): missing medium'));
 });
+
+test('rulepack: the shipped upstream rulepack is valid', () => {
+  const pack = JSON.parse(readFileSync(new URL('../knowledge/upstream/rulepack.json', import.meta.url)));
+  const errors = validateRulepack(pack, schema);
+  assert.deepEqual(errors, [], errors.join('\n'));
+});
