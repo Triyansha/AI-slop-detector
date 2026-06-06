@@ -1,0 +1,33 @@
+import { test } from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+import { validateRulepack } from './lib/validate-rulepack.mjs';
+
+const schema = JSON.parse(readFileSync(new URL('../knowledge/rulepack.schema.json', import.meta.url)));
+
+test('rulepack: valid entry passes', () => {
+  const pack = [{
+    id: 'text-nongoals-empty', medium: 'text', domain: 'pm', severity: 'high',
+    test: 'specificity', rule_ref: 'wc-1', source: 'https://example.com', date: '2026-06-05'
+  }];
+  const errors = validateRulepack(pack, schema);
+  assert.deepEqual(errors, []);
+});
+
+test('rulepack: duplicate id is rejected', () => {
+  const e = { id: 'dup-x', medium: 'text', domain: 'pm', severity: 'low', test: 'specificity', rule_ref: 'wc-1', source: 'https://x.co', date: '2026-06-05' };
+  const errors = validateRulepack([e, { ...e }], schema);
+  assert.ok(errors.some(m => m.includes('duplicate id')));
+});
+
+test('rulepack: bad medium enum is rejected', () => {
+  const errors = validateRulepack([{
+    id: 'x-y', medium: 'audio', domain: 'pm', severity: 'low', test: 'specificity', rule_ref: 'wc-1', source: 'https://x.co', date: '2026-06-05'
+  }], schema);
+  assert.ok(errors.some(m => m.includes('medium')));
+});
+
+test('rulepack: missing field is rejected', () => {
+  const errors = validateRulepack([{ id: 'x-y', medium: 'text' }], schema);
+  assert.ok(errors.some(m => m.includes('missing')));
+});
