@@ -1,0 +1,3 @@
+[
+  { "id": "text-fake-vulnerability", "medium": "text", "domain": "general", "severity": "medium", "test": "specificity", "rule_ref": "wc-5", "source": "https://www.linkedin.com/posts/petergyang_stop-posting-ai-slop-theres-a-difference-activity-7410697657071001600-NmJw", "date": "2026-06-11" }
+]
