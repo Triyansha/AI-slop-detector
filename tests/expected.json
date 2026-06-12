@@ -11,5 +11,9 @@
   "findings/deck-uniform-bullets.json": {
     "band": "heavy",
     "must_catch": ["pres-no-thesis", "pres-fake-infographic"]
+  },
+  "findings/landing-purple-gradient.json": {
+    "band": "heavy",
+    "must_catch": ["design-gradient-purpleblue", "design-vague-cta"]
   }
 }

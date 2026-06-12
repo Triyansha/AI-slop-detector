@@ -1,0 +1,13 @@
+{
+  "score": 52,
+  "band": "heavy",
+  "mode": "general",
+  "artifact": "landing-page",
+  "version": "0.1.0",
+  "findings": [
+    { "tell_id": "design-gradient-purpleblue", "severity": "high", "locator": { "type": "region", "description": "full-width hero background" }, "test_failed": "specificity", "why": "default purple-to-blue gradient with no brand rationale" },
+    { "tell_id": "design-inter-only", "severity": "medium", "locator": { "type": "region", "description": "all headings and body" }, "test_failed": "specificity", "why": "Inter is the only typeface, no display/body contrast" },
+    { "tell_id": "design-vague-cta", "severity": "medium", "locator": { "type": "region", "description": "hero CTA button" }, "test_failed": "specificity", "why": "\"Get Started\" says nothing about what happens next" }
+  ],
+  "top_fix": "Swap the hero gradient for a brand color, add a display typeface, and make the CTA specific."
+}
