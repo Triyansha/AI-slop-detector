@@ -5,10 +5,24 @@ A multimodal AI-slop **detector, de-slopper, and coach** — a pure-instruction 
 Not an "AI-or-human" accuser. A scorer + coach: *what* reads as machine-made, *how* to fix it, and *how* to prevent it.
 
 ## Install
+
 ```bash
 npx skills add Triyansha/AI-slop-detector
 ```
-(Installs by git-clone into your Claude skills directory, so `git pull` brings weekly taxonomy updates. Manual: clone this repo into `~/.claude/skills/`.)
+
+This installs the skill by git-clone into your Claude skills directory, so a later `git pull` brings weekly taxonomy updates.
+
+<details>
+<summary>Manual install (alternative)</summary>
+
+Clone the repo into your Claude skills directory:
+
+```bash
+git clone https://github.com/Triyansha/AI-slop-detector.git ~/.claude/skills/slop-detector
+```
+
+Then restart your Claude session so the skill is discovered.
+</details>
 
 ## Use
 In Claude, with the skill installed:
