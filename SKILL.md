@@ -27,3 +27,6 @@ Read the user's intent:
 
 ## Output
 Always lead with: `Slop Detector v<VERSION> · <mode> mode · <artifact>` then the score with its emoji band, then findings, then the chosen action's output.
+
+## Staying current
+To propose new tells, run `actions/update-taxonomy.md` (it writes candidate digests to `trends/` — it never edits the canon directly). Promote reviewed candidates with `npm run promote`.

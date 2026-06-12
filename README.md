@@ -31,16 +31,19 @@ In Claude, with the skill installed:
 - "Why does this sound like AI?" → coach
 
 ## How it works
-Router (`SKILL.md`) → text detector → shared rubric + knowledge → de-slop / coach actions. The taxonomy is data (`knowledge/`), so it's forkable and gets smarter over time. See `spec/` and `plans/` in the parent project for the full design.
+Router (`SKILL.md`) → five detectors → shared rubric + knowledge → de-slop / coach actions. The taxonomy is data (`knowledge/`), so it's forkable and gets smarter over time. See `spec/` and `plans/` in the parent project for the full design.
+
+The taxonomy gets smarter over time: `actions/update-taxonomy.md` proposes newly-emerging tells as dated candidate digests in `trends/`, and `npm run promote` appends reviewed ones (gated by the test suite).
 
 ## Develop / test
 ```bash
-npm test          # zero-dependency contract + rulepack validators
+npm test          # zero-dependency contract + rulepack + regression-gate validators
 npm run eval      # optional: scores the corpus via the Anthropic API (needs ANTHROPIC_API_KEY)
+npm run promote -- trends/<date>.candidates.json   # dry-run promote of reviewed tells (add --apply to write)
 ```
 
 ## Status
-v0.2.0 — All five detectors (text, presentation, design, data, audio/video). Coming: the weekly update-taxonomy loop and the npx installer.
+v0.3.0 — Five detectors + the propose-not-commit intelligence loop. Coming: the npx installer.
 
 ## License
 MIT
