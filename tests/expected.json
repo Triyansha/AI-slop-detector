@@ -19,5 +19,9 @@
   "findings/sizing-fabricated.json": {
     "band": "heavy",
     "must_catch": ["data-fabricated-precision", "data-no-formula"]
+  },
+  "findings/talk-engagement-bait.json": {
+    "band": "heavy",
+    "must_catch": ["av-engagement-bait", "av-no-named-detail"]
   }
 }

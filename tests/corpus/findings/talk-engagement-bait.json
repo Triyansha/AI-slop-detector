@@ -1,0 +1,13 @@
+{
+  "score": 49,
+  "band": "heavy",
+  "mode": "general",
+  "artifact": "video-transcript",
+  "version": "0.1.0",
+  "findings": [
+    { "tell_id": "av-engagement-bait", "severity": "medium", "locator": { "type": "span", "text": "you won't believe what happened next" }, "test_failed": "specificity", "why": "viral-bait hook promising payoff the content never delivers" },
+    { "tell_id": "av-no-named-detail", "severity": "high", "locator": { "type": "span", "text": "many experts agree this changes everything" }, "test_failed": "specificity", "why": "no named expert, study, number, or date anywhere" },
+    { "tell_id": "av-scripted-cadence", "severity": "medium", "locator": { "type": "timestamp", "start": "00:30", "end": "01:10" }, "test_failed": "specificity", "why": "metronomic evenly-paced delivery, no natural variation" }
+  ],
+  "top_fix": "Cut the bait hook, name one real expert/number, and vary the pacing around the key point."
+}
