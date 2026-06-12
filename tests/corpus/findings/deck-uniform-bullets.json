@@ -1,0 +1,13 @@
+{
+  "score": 58,
+  "band": "heavy",
+  "mode": "pm",
+  "artifact": "deck",
+  "version": "0.1.0",
+  "findings": [
+    { "tell_id": "pres-three-bullets", "severity": "medium", "locator": { "type": "slide", "n": 3, "element": "bullets" }, "test_failed": "specificity", "why": "every content slide has exactly three bullets regardless of content" },
+    { "tell_id": "pres-no-thesis", "severity": "high", "locator": { "type": "slide", "n": 8, "element": "title" }, "test_failed": "tradeoff", "why": "summary slide surveys options but recommends none" },
+    { "tell_id": "pres-fake-infographic", "severity": "high", "locator": { "type": "slide", "n": 5, "element": "chart" }, "test_failed": "provenance", "why": "market-size chart shows round numbers with no source" }
+  ],
+  "top_fix": "Cut to one idea per slide, add a recommendation slide, and source or remove the market-size chart."
+}

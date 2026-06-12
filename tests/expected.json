@@ -7,5 +7,9 @@
   "clean/prd-sharp.md": {
     "band": "clean",
     "must_catch": []
+  },
+  "findings/deck-uniform-bullets.json": {
+    "band": "heavy",
+    "must_catch": ["pres-no-thesis", "pres-fake-infographic"]
   }
 }
