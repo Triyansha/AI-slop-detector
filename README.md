@@ -40,7 +40,7 @@ npm run eval      # optional: scores the corpus via the Anthropic API (needs ANT
 ```
 
 ## Status
-v0.1.0 — Foundation + text pipeline. Coming: presentation/design/data/audiovideo detectors, the weekly update-taxonomy loop, and the npx installer.
+v0.2.0 — All five detectors (text, presentation, design, data, audio/video). Coming: the weekly update-taxonomy loop and the npx installer.
 
 ## License
 MIT

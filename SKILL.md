@@ -11,7 +11,7 @@ Detect AI slop, correct it, and coach the user to stop generating it. Not an "AI
 Determine what you were handed: pasted text, a file path, a screenshot/image, a transcript, or a URL. Normalize to readable form. For decks, expect exported slide images or pasted text; for audio/video, expect a transcript (see each detector for ingestion notes).
 
 ## Step 2 — Identify (medium + mode)
-- **Medium → detector(s):** text → `detectors/text.md`; slides/.pptx/slide-images → `detectors/presentation.md`; screenshots/UI/images → `detectors/design.md`; transcript/recording → `detectors/audiovideo.md`; sheets/dashboards/metrics → `detectors/data.md`. (In this version, only `text.md` is implemented; others arrive in Plan 2.) Mixed artifacts load multiple detectors.
+- **Medium → detector(s):** text → `detectors/text.md`; slides/.pptx/slide-images → `detectors/presentation.md`; screenshots/UI/images → `detectors/design.md`; transcript/recording → `detectors/audiovideo.md`; sheets/dashboards/metrics → `detectors/data.md`. Mixed artifacts load multiple detectors.
 - **Mode:** read `knowledge/modes.json`. Match the artifact's signals to a mode; fall back to the `default: true` mode. Never hardcode modes here — adding a domain must require no edit to this file.
 
 ## Step 3 — Detect

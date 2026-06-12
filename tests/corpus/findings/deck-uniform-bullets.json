@@ -3,7 +3,7 @@
   "band": "heavy",
   "mode": "pm",
   "artifact": "deck",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "findings": [
     { "tell_id": "pres-three-bullets", "severity": "medium", "locator": { "type": "slide", "n": 3, "element": "bullets" }, "test_failed": "specificity", "why": "every content slide has exactly three bullets regardless of content" },
     { "tell_id": "pres-no-thesis", "severity": "high", "locator": { "type": "slide", "n": 8, "element": "title" }, "test_failed": "tradeoff", "why": "summary slide surveys options but recommends none" },

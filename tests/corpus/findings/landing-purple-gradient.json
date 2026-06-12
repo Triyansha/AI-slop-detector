@@ -3,7 +3,7 @@
   "band": "heavy",
   "mode": "general",
   "artifact": "landing-page",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "findings": [
     { "tell_id": "design-gradient-purpleblue", "severity": "high", "locator": { "type": "region", "description": "full-width hero background" }, "test_failed": "specificity", "why": "default purple-to-blue gradient with no brand rationale" },
     { "tell_id": "design-inter-only", "severity": "medium", "locator": { "type": "region", "description": "all headings and body" }, "test_failed": "specificity", "why": "Inter is the only typeface, no display/body contrast" },

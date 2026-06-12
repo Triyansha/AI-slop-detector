@@ -3,7 +3,7 @@
   "band": "saturated",
   "mode": "pm",
   "artifact": "PRD",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "findings": [
     { "tell_id": "text-opener-fastpaced", "severity": "high", "locator": { "type": "span", "text": "In today's fast-paced digital landscape" }, "test_failed": "specificity", "why": "generic opener, true of any product" },
     { "tell_id": "text-buzzword-abstraction", "severity": "medium", "locator": { "type": "span", "text": "leverage cutting-edge capabilities and unlock transformative value" }, "test_failed": "specificity", "why": "abstraction, names nothing concrete" },
