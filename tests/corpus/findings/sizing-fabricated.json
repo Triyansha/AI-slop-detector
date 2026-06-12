@@ -1,0 +1,13 @@
+{
+  "score": 61,
+  "band": "heavy",
+  "mode": "pm",
+  "artifact": "sizing-model",
+  "version": "0.1.0",
+  "findings": [
+    { "tell_id": "data-fabricated-precision", "severity": "high", "locator": { "type": "cell", "ref": "TAM" }, "test_failed": "provenance", "why": "$37.5B TAM with no derivation or source" },
+    { "tell_id": "data-round-numbers", "severity": "medium", "locator": { "type": "cell", "ref": "B4" }, "test_failed": "provenance", "why": "capture rate set to a round 1% with no basis" },
+    { "tell_id": "data-no-formula", "severity": "high", "locator": { "type": "cell", "ref": "north-star metric" }, "test_failed": "provenance", "why": "\"engagement\" named as north star with no formula, source, or owner" }
+  ],
+  "top_fix": "Show the bottom-up TAM math, justify the capture rate, and define the metric formula/source/owner."
+}

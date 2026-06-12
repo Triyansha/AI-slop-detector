@@ -15,5 +15,9 @@
   "findings/landing-purple-gradient.json": {
     "band": "heavy",
     "must_catch": ["design-gradient-purpleblue", "design-vague-cta"]
+  },
+  "findings/sizing-fabricated.json": {
+    "band": "heavy",
+    "must_catch": ["data-fabricated-precision", "data-no-formula"]
   }
 }
