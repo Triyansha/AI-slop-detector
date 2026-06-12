@@ -10,15 +10,20 @@ Not an "AI-or-human" accuser. A scorer + coach: *what* reads as machine-made, *h
 npx skills add Triyansha/AI-slop-detector
 ```
 
-This installs the skill by git-clone into your Claude skills directory, so a later `git pull` brings weekly taxonomy updates.
+This uses the [Vercel `skills` CLI](https://github.com/vercel-labs/skills) to copy the skill folder (`skills/slop-detector/`) into your Claude skills directory. Add `-g` to install globally:
+
+```bash
+npx skills add Triyansha/AI-slop-detector -g
+```
 
 <details>
 <summary>Manual install (alternative)</summary>
 
-Clone the repo into your Claude skills directory:
+Clone the repo and copy the skill folder into your Claude skills directory:
 
 ```bash
-git clone https://github.com/Triyansha/AI-slop-detector.git ~/.claude/skills/slop-detector
+git clone https://github.com/Triyansha/AI-slop-detector.git
+cp -r AI-slop-detector/skills/slop-detector ~/.claude/skills/slop-detector
 ```
 
 Then restart your Claude session so the skill is discovered.
@@ -31,9 +36,13 @@ In Claude, with the skill installed:
 - "Why does this sound like AI?" → coach
 
 ## How it works
-Router (`SKILL.md`) → five detectors → shared rubric + knowledge → de-slop / coach actions. The taxonomy is data (`knowledge/`), so it's forkable and gets smarter over time. See `spec/` and `plans/` in the parent project for the full design.
+Router (`SKILL.md`) → five detectors → shared rubric + knowledge → de-slop / coach actions. The taxonomy is data (`knowledge/`), so it's forkable and gets smarter over time.
 
 The taxonomy gets smarter over time: `actions/update-taxonomy.md` proposes newly-emerging tells as dated candidate digests in `trends/`, and `npm run promote` appends reviewed ones (gated by the test suite).
+
+## Repo layout
+- `skills/slop-detector/` — the installable skill (what `npx skills add` copies): `SKILL.md`, `detectors/`, `actions/`, `knowledge/`, `rubric.md`, `interrogator.md`, `trends/`.
+- `tests/`, `tools/`, `package.json` — maintainer dev harness (the zero-dependency validators + the `promote` helper). Not needed to *use* the skill; used to develop and grow it.
 
 ## Develop / test
 ```bash
@@ -43,7 +52,7 @@ npm run promote -- trends/<date>.candidates.json   # dry-run promote of reviewed
 ```
 
 ## Status
-v0.3.0 — Five detectors + the propose-not-commit intelligence loop. Coming: the npx installer.
+v1.0.0 — Five detectors + intelligence loop, installable via `npx skills`. The full foundation is live.
 
 ## License
 MIT

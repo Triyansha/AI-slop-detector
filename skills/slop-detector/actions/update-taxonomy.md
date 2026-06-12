@@ -15,7 +15,7 @@ On a schedule (the author's weekly cron) or manually ("run the taxonomy updater"
 5. **Stop.** Do not modify the rulepack or taxonomies. Report the digest path and a one-line summary.
 
 ## Promotion (separate, human-gated)
-The author reviews `trends/YYYY-MM-DD.md`, then:
+Promotion happens in the project repo (a clone with the dev harness), not in an installed copy of the skill. The author reviews `trends/YYYY-MM-DD.md`, then:
 ```
 npm run promote -- trends/YYYY-MM-DD.candidates.json          # dry-run: validates, writes nothing
 npm run promote -- trends/YYYY-MM-DD.candidates.json --apply  # appends the valid, fresh candidates
