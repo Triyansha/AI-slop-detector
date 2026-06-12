@@ -64,3 +64,19 @@ test('corpus: expected.json must_catch ids all exist in the rulepack', () => {
     }
   }
 });
+
+test('regression gate: clean fixtures expect zero findings', () => {
+  const expected = JSON.parse(readFileSync(new URL('./expected.json', import.meta.url)));
+  for (const [fixture, exp] of Object.entries(expected)) {
+    if (fixture.startsWith('clean/')) {
+      assert.equal(exp.must_catch.length, 0, `${fixture}: a clean fixture must expect zero must_catch tells`);
+      assert.equal(exp.band, 'clean', `${fixture}: a clean fixture must expect the clean band`);
+    }
+  }
+});
+
+test('regression gate: rulepack ids are globally unique', () => {
+  const pack = JSON.parse(readFileSync(new URL('../knowledge/upstream/rulepack.json', import.meta.url)));
+  const ids = pack.map(e => e.id);
+  assert.equal(ids.length, new Set(ids).size, 'duplicate id in rulepack');
+});
