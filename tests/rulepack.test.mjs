@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { validateRulepack } from './lib/validate-rulepack.mjs';
 
-const schema = JSON.parse(readFileSync(new URL('../knowledge/rulepack.schema.json', import.meta.url)));
+const schema = JSON.parse(readFileSync(new URL('../skills/slop-detector/knowledge/rulepack.schema.json', import.meta.url)));
 
 test('rulepack: valid entry passes', () => {
   const pack = [{
@@ -46,7 +46,7 @@ test('rulepack: null field value is treated as missing', () => {
 });
 
 test('rulepack: the shipped upstream rulepack is valid', () => {
-  const pack = JSON.parse(readFileSync(new URL('../knowledge/upstream/rulepack.json', import.meta.url)));
+  const pack = JSON.parse(readFileSync(new URL('../skills/slop-detector/knowledge/upstream/rulepack.json', import.meta.url)));
   const errors = validateRulepack(pack, schema);
   assert.deepEqual(errors, [], errors.join('\n'));
 });

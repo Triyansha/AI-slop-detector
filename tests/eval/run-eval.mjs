@@ -8,9 +8,9 @@ if (!key) { console.error('Set ANTHROPIC_API_KEY to run the eval.'); process.exi
 
 const root = new URL('../../', import.meta.url);
 const expected = JSON.parse(readFileSync(new URL('tests/expected.json', root)));
-const rubric = readFileSync(new URL('rubric.md', root), 'utf8');
-const textDetector = readFileSync(new URL('detectors/text.md', root), 'utf8');
-const rulepack = readFileSync(new URL('knowledge/upstream/rulepack.json', root), 'utf8');
+const rubric = readFileSync(new URL('skills/slop-detector/rubric.md', root), 'utf8');
+const textDetector = readFileSync(new URL('skills/slop-detector/detectors/text.md', root), 'utf8');
+const rulepack = readFileSync(new URL('skills/slop-detector/knowledge/upstream/rulepack.json', root), 'utf8');
 
 const bandOf = (s) => s <= 20 ? 'clean' : s <= 45 ? 'light' : s <= 70 ? 'heavy' : 'saturated';
 let pass = 0, fail = 0;

@@ -4,7 +4,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { validateFindings } from './lib/validate-findings.mjs';
 
 const schema = JSON.parse(readFileSync(new URL('./contract.schema.json', import.meta.url)));
-const rulepack = JSON.parse(readFileSync(new URL('../knowledge/upstream/rulepack.json', import.meta.url)));
+const rulepack = JSON.parse(readFileSync(new URL('../skills/slop-detector/knowledge/upstream/rulepack.json', import.meta.url)));
 const ids = new Set(rulepack.map(e => e.id));
 
 const good = {
@@ -76,7 +76,7 @@ test('regression gate: clean fixtures expect zero findings', () => {
 });
 
 test('regression gate: rulepack ids are globally unique', () => {
-  const pack = JSON.parse(readFileSync(new URL('../knowledge/upstream/rulepack.json', import.meta.url)));
+  const pack = JSON.parse(readFileSync(new URL('../skills/slop-detector/knowledge/upstream/rulepack.json', import.meta.url)));
   const ids = pack.map(e => e.id);
   assert.equal(ids.length, new Set(ids).size, 'duplicate id in rulepack');
 });

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { dedupeCandidates, validateCandidate } from '../tools/lib/promote-core.mjs';
 
-const schema = JSON.parse(readFileSync(new URL('../knowledge/rulepack.schema.json', import.meta.url)));
+const schema = JSON.parse(readFileSync(new URL('../skills/slop-detector/knowledge/rulepack.schema.json', import.meta.url)));
 
 const existing = [{ id: 'text-emdash-overload' }, { id: 'design-inter-only' }];
 

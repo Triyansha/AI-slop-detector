@@ -10,8 +10,8 @@ const apply = process.argv.includes('--apply');
 if (!file) { console.error('Usage: node tools/promote.mjs <candidates.json> [--apply]'); process.exit(2); }
 
 const root = new URL('../', import.meta.url);
-const schema = JSON.parse(readFileSync(new URL('knowledge/rulepack.schema.json', root)));
-const rulepackUrl = new URL('knowledge/upstream/rulepack.json', root);
+const schema = JSON.parse(readFileSync(new URL('skills/slop-detector/knowledge/rulepack.schema.json', root)));
+const rulepackUrl = new URL('skills/slop-detector/knowledge/upstream/rulepack.json', root);
 const rulepack = JSON.parse(readFileSync(rulepackUrl));
 const candidates = JSON.parse(readFileSync(file));
 
